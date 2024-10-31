@@ -102,7 +102,7 @@
 }
 
 #contact .form__input {
-  width: 60%;
+  width: 70%;
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -113,7 +113,7 @@
 
 #contact .form__input--checkbox {
   display: inline-block;
-  margin-right: 10px;
+  margin-left: 20px;
 }
 
 #contact .contact-form__btn {
@@ -427,21 +427,34 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
     }
 
-    /* Style pour la section logo */
-    .logo-section {
-      display: flex;
-      align-items: center;
-    }
+/* Section du logo */
+.logo-section {
+    display: flex;
+    align-items: center;
+	color: white;
+}
 
-    .logo-section img {
-      height: 50px; /* Taille du logo */
-      margin-right: 15px;
-    }
+/* Image du logo avec zoom permanent et cercle */
+.logo-section .logo-circle {
+    height: 50px;
+    width: 50px; /* Taille du logo (diamètre du cercle) */
+    border-radius: 50%; /* Forme circulaire */
+    overflow: hidden; /* Cache les parties débordantes de l'image */
+    object-fit: cover; /* Remplit le cercle sans déformation */
+    transform: scale(1.5); /* Zoom permanent pour agrandir le logo */
+	margin-bottom: 10px;
+}
 
-    .logo-section .company-name {
-      font-size: 22px;
-      font-weight: bold;
-    }
+/* Nom de l'entreprise */
+.logo-section .company-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 25px; /* Espacement entre le logo et le texte */
+}
+
+.highlight {
+    color: #FF0000; /* Rouge pour "Plus" */
+}
 
     /* Style pour la liste de navigation */
     .sb-nav__list {
@@ -507,7 +520,7 @@
 /* Couleurs spécifiques des icônes et styles de bordure */
 	.fa-facebook-f {
 		background-color: #001f3f; /* Bleu nuit pour l'arrière-plan */
-		color: yellow; /* Couleur des icônes */
+		color: red; /* Couleur des icônes */
 		padding: 10px;
 	}
 
@@ -520,7 +533,7 @@
 
 	.fa-twitter {
 		background-color: #001f3f; /* Bleu nuit pour l'arrière-plan */
-		color: yellow; /* Couleur des icônes */
+		color: red; /* Couleur des icônes */
 		padding: 10px;
 	}
 
@@ -845,9 +858,13 @@ section {
                 <div id="sb-id-8a7d90cd-c20c-4bb1-982b-ea04c5b57f19" class="sb-column-content ">
                     <div class="wrapper sb-top-header items-can-collapse" data-sb-uuid="8a7d90cd-c20c-4bb1-982b-ea04c5b57f19" id="sb-top-nav-8a7d90cd-c20c-4bb1-982b-ea04c5b57f19">
                         <nav aria-label="Main" class="sb-top-header__nav sb-nav">
-                            <div class="logo-section">
-                                <img src="logo.png" alt="Logo de l'entreprise">
-                            </div>
+<div class="logo-section">
+    <img src="C:\Users\HP\OneDrive\Documents\GPV.jpg" alt="Logo de l'entreprise" class="logo-circle">
+    <span class="company-name">
+        Global <span class="highlight">Plus</span> Vision
+    </span>
+</div>
+
 							<div class="menu-icon" onclick="toggleMenu()">
 								<i class="fas fa-bars"></i>
 							</div>
@@ -869,10 +886,10 @@ section {
                                 </li>
                             </ul>
                             <div class="social-media-fixed">
-                                <a href="https://www.facebook.com" class="fab fa-facebook-f"></a>
+                                <a href="https://www.facebook.com/BusinessInstitutex" class="fab fa-facebook-f"></a>
                                 <a href="https://www.instagram.com" class="fab fa-instagram"></a>
                                 <a href="https://www.twitter.com" class="fab fa-twitter"></a>
-                                <a href="https://www.linkedin.com" class="fab fa-linkedin-in"></a>
+                                <a href="https://www.linkedin.com/company/digital-business-international-academy/" class="fab fa-linkedin-in"></a>
                             </div>
                         </nav>
   
@@ -1600,7 +1617,7 @@ $(function () {
     </div>
 </section>
 
-<div style="width: 1200px; height: 4px; background-color: #FFD700; margin: 10px auto; margin-top:75px;"></div>
+<div style="width: 1200px; height: 4px; background-color: #FF0000; margin: 10px auto; margin-top:75px;"></div>
 
 <section id="about" class="sb-section" style="position: relative; background-image: url('https://cdn.b12.io/client_media/Zbw2WxCa/30cdbbe0-1104-11ef-8a48-0242ac110002-jpg-hero_image.jpeg'); background-size: cover; background-position: center; width: 100%; height: 100vh; display: flex; align-items: flex-start;">
     <div class="container" style="position: relative; width: 100%; height: 100%; display: flex; justify-content: space-between; align-items: flex-start; z-index: 2;">
@@ -1661,71 +1678,10 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-
-
-<!--section id="about" class="sb-section sb-section-opt-light option-image-align-center" style="min-height: auto;">
-    <div class="container sb-container-fixed sb-container">
-      <div id="sb-id-e636d0e9-bb39-4129-9a4b-b98bd53cccb0" class="row sb-row sb-row-opt-padding-top-large sb-row-opt-padding-bottom-large sb-row-opt-center">
-        
-        <div id="sb-id-3b180145-59c6-4aba-ba4c-d82855b42cea" class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 sb-component-text-image">
-          <div id="sb-id-e08a0d23-2f0d-49c9-8f2d-4ac98573b25a" class="sb-column-content">
-            
-            <div class="sb-text-image sb-section-alignable">
-              <div class="sb-text-image__content option-width">
-                <h3 class="sb-title">Notre vision</h3>
-                <p class="sb-text-image__content-paragraph">Global Plus Vision est une entreprise de conseil en affaires basée à Cotonou, spécialisée dans la fourniture de conseils stratégiques et de solutions commerciales innovantes...</p>
-                <div class="sb-text-image__content-cta">
-                  <a class="sb-button sb-button--secondary" href="/index#contact">Get in touch</a>
-                </div>
-              </div>
-              <!-- Image agrandie pour toute la largeur de l'écran 
-              <div class="sb-text-image__image full-width-image">
-                <figure class="option-image text-image">
-                    <img alt="Tall skyscrapers in Calgary" src="https://cdn.b12.io/client_media/Zbw2WxCa/30cdbbe0-1104-11ef-8a48-0242ac110002-jpg-hero_image.jpeg" loading="lazy">
-                </figure>
-              </div>
-            </div>
-<script>
-$(function() {
-  var $elem = $('[data-sb-uuid="e08a0d23-2f0d-49c9-8f2d-4ac98573b25a"]'),
-      $section = $elem.closest('.sb-section'),
-      hasProperClass = !!($section.hasClass('option-text-image-float-left') || $section.hasClass('option-text-image-float-right'));
-
-  mq('(min-width: 767px)', function (match) {
-    if (match && hasProperClass) {
-      $elem.find('.option-image').prependTo($section);
-    } else {
-      $section.find('.option-image').prependTo($elem.find('.sb-text-image__image'));
-    }
-  });
-
-  function mq(query, callback, usePolyfill) {
-    var host = {};
-    var isMatchMediaSupported = !!(window && window.matchMedia) && !usePolyfill;
-
-    if (isMatchMediaSupported) {
-      var res = window.matchMedia(query);
-
-      callback.apply(host, [res.matches, res.media]);
-
-      res.addListener(function (changed) {
-        callback.apply(host, [changed.matches, changed.media]);
-      });
-    }
-  }
-});
-</script>
-		  </div>
-        </div>
-      </div>
-    </div>
-	BLUE NUIT #0a0a2a
-  </section-->
-
-<!--htmlhint attr-no-duplication:false -->
-<div style="width: 1200px; height: 6px; background-color: #FFD700; margin: 10px auto; margin-top:75px;"></div>
+<!--BLUE NUIT #0a0a2a htmlhint attr-no-duplication:false -->
+<div style="width: 1200px; height: 6px; background-color: #FF0000; margin: 10px auto; margin-top:50px;"></div>
 <div style="width: 800px; height: 4px; background-color: #FFF; margin: 10px auto; margin-top:20px;"></div>
-<div style="width: 1300px; height: 6px; background-color: #FFD700; margin: 10px auto; margin-top:20px;"></div>
+<div style="width: 1300px; height: 6px; background-color: #FF0000; margin: 10px auto; margin-top:20px; margin-bottom:0px; "></div>
 
 <section id="services" class="sb-section sb-section-opt-light" style="background-color: #001f3f; color: white; padding: 50px 0;">
   <div class="container sb-container-fixed sb-container">
@@ -1756,7 +1712,7 @@ $(function() {
     <!-- Services Grid -->
     <div class="row sb-row sb-row-opt-top" style="margin-top: 30px;">
       <div class="sb-column col-12 sb-component-image-with-metadata-grid">
-        <div class="sb-column-content">
+        <!--div class="sb-column-content"-->
           <ul class="items-grid sb-section-alignable" data-sb-uuid="services-grid" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
 
             <li class="items-grid__item items-grid__item--bg-default tag-all" data-aos="fade-in" style=" margin-bottom: 40px; border-radius: 10px; overflow: hidden; transition: transform 0.3s;">
@@ -1836,19 +1792,18 @@ $(function() {
             </li>
 
           </ul>
-        </div>
+        <!--/div-->
       </div>
     </div>
   </div>
 </section>
 
-<div style="width: 1200px; height: 6px; background-color: #FFD700; margin: 10px auto; margin-top:75px;"></div>
+<div style="width: 1200px; height: 6px; background-color: #FF0000; margin: 10px auto; margin-top:75px;"></div>
 <div style="width: 800px; height: 4px; background-color: #FFF; margin: 10px auto; margin-top:20px;"></div>
-<div style="width: 1300px; height: 6px; background-color: #FFD700; margin: 10px auto; margin-top:20px;"></div>
+<div style="width: 1300px; height: 6px; background-color: #FF0000; margin: 10px auto; margin-top:20px;"></div>
 
 <!--htmlhint attr-no-duplication:false -->
 <section id="contact" class="sb-section sb-section-opt-light option-section-background-image-fixed option-align-left appointment-inline-view half-width-contact-form" style="min-height: auto;">
-  
   <div class="container sb-container-fixed sb-container">
     <div class="row sb-row sb-row-opt-padding-top-large sb-row-opt-padding-bottom-large sb-row-opt-center">
       <div class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 sb-component-contact-full">
@@ -1859,11 +1814,10 @@ $(function() {
               
               <!-- Formulaire de contact -->
               <div class="col-xs-12 col-sm-12 col-md-5">
-                <div class="contact-full__form" id="contact-form-6db78518">
+                <!--div class="contact-full__form" id="contact-form-6db78518"-->
                   <div class="sb-section-title" data-aos="slide-up" data-aos-offset="120" data-aos-duration="400">Nous contacter</div>
                   <div class="sb-section-subtitle" data-aos="slide-up" data-aos-offset="120" data-aos-duration="400">Besoin d'assistance ? contactez-nous dès maintenant !</div>
                   <div class="sb-paragraph" data-aos="slide-up" data-aos-offset="120" data-aos-duration="400">Global Plus Vision est là pour vous aider à atteindre vos objectifs commerciaux. Nos experts se feront un plaisir de vous répondre.</div>
-                  
                   <form class="form js-form" id="contact-form">
                     <div class="form__group form__group--required">
                       <!--label class="form__label" for="name">Nom <span class="form__label-required">*</span></label-->
@@ -1886,8 +1840,7 @@ $(function() {
                     </div>
 
                     <div class="form__group form__group--checkbox form__group--required">
-                      <input class="form__input form__input--checkbox" id="gdpr" name="gdpr" type="checkbox">
-                      <label class="form__label" for="gdpr">J'accepte que ce site stocke mes informations pour répondre à ma demande <span class="form__label-required">*</span></label>
+                      <span style="margin-right:0px;">Vos informations seront stockés afin de répondre à votre demande</span>
                     </div>
 
                     <button class="sb-button sb-button--form contact-form__btn" type="submit">Envoyer</button>
@@ -1898,7 +1851,7 @@ $(function() {
                 </div>
               </div>
             </div>
-          </div>
+          <!--/div-->
 
         </div>
       </div>
@@ -1907,7 +1860,7 @@ $(function() {
 </section>
     <!--htmlhint attr-no-duplication:false -->
 
-<div style="width: 1300px; height: 4px; background-color: #FFD700; margin: 10px auto; margin-top:75px;"></div>
+<div style="width: 1300px; height: 4px; background-color: #FF0000; margin: 10px auto; margin-top:75px;"></div>
 
 <footer id="more" class="footer-section" style="background: #001f3f; color: white;">
     <div class="container">
@@ -1915,7 +1868,7 @@ $(function() {
             <div class="row">
                 <div class="col-xl-4 col-md-4 mb-30">
                     <div class="single-cta d-flex align-items-center">
-                        <i class="fas fa-map-marker-alt" aria-hidden="true" style="margin-right: 10px;"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true" style="margin-right: 10px; color:red"></i>
                         <div class="cta-text">
                             <h4>Location</h4>
                             <a href="https://www.google.com/maps/place/+Cotonou+LI+BJ" target="_blank" rel="noreferrer">
@@ -1926,7 +1879,7 @@ $(function() {
                 </div>
                 <div class="col-xl-4 col-md-4 mb-30">
                     <div class="single-cta d-flex align-items-center">
-                        <i class="fas fa-phone" aria-hidden="true" style="margin-right: 10px;"></i>
+                        <i class="fas fa-phone" aria-hidden="true" style="margin-right: 10px; color:red"></i>
                         <div class="cta-text">
                             <h4>Telephone</h4>
                             <span>+229 97405223</span>
@@ -1935,7 +1888,7 @@ $(function() {
                 </div>
                 <div class="col-xl-4 col-md-4 mb-30">
                     <div class="single-cta d-flex align-items-center">
-                        <i class="far fa-envelope-open" aria-hidden="true" style="margin-right: 10px;"></i>
+                        <i class="far fa-envelope-open" aria-hidden="true" style="margin-right: 10px; color:red"></i>
                         <div class="cta-text">
                             <h4>Email</h4>
                             <span>consultantbergsonhugn@gmail.com</span>
@@ -1944,7 +1897,7 @@ $(function() {
                 </div>
                 <div class="col-xl-4 col-md-4 mb-30">
                     <div class="single-cta d-flex align-items-center margin-bottom:10px">
-                        <i class="fas fa-clock" style="margin-right: 10px;"></i>
+                        <i class="fas fa-clock" style="margin-right: 10px; color:red"></i>
                         <div class="cta-text">
                             <h4>Horaires</h4>
                             <span>Lundi - Vendredi : 9:00am – 10:00pm<br></span>
@@ -1954,27 +1907,29 @@ $(function() {
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div>        
         <div class="footer-content pt-5 pb-5">
             <div class="row">
                 <div class="col-xl-4 col-lg-4 mb-50">
                     <div class="footer-widget">
                         <div class="footer-logo">
                             <h2 class="sb-title sb-footer__branding">
-                                <a class="brand sb-brand-default org" href="/" style="color: #f0c14b; text-decoration: none; font-size: 28px;">
-                                    Global Plus Vision
+                                <a class="brand sb-brand-default org" href="/" style="color: white; text-decoration: none; font-size: 28px;">
+                                    Global
+                                </a>
+								<a class="brand sb-brand-default org" href="/" style="color: red; text-decoration: none; font-size: 28px;">
+                                     Plus
+                                </a>
+								<a class="brand sb-brand-default org" href="/" style="color: white; text-decoration: none; font-size: 28px;">
+                                     Vision
                                 </a>
                             </h2>
                         </div>
-                        <div class="footer-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
                         <div class="footer-social-icon">
                             <span>Follow us</span>
-                            <a href="#" style="color: white;"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" style="color: white;"><i class="fab fa-twitter"></i></a>
-                            <a href="#" style="color: white;"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.facebook.com/BusinessInstitutex" style="color: red;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" style="color: red;"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/company/digital-business-international-academy/" style="color: white;"><i class="fab fa-linkedin"></i></a>
                             <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
