@@ -17,6 +17,15 @@
 <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HMGBBLYCQJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HMGBBLYCQJ');
+</script>
 
   <style>
  body {
@@ -1828,48 +1837,76 @@ document.addEventListener("DOMContentLoaded", function() {
               
               <!-- Formulaire de contact -->
               <div class="col-xs-12 col-sm-12 col-md-5">
-                <!--div class="contact-full__form" id="contact-form-6db78518"-->
-                  <div class="sb-section-title" data-aos="slide-up" data-aos-offset="120" data-aos-duration="400">Nous contacter</div>
-                  <div class="sb-section-subtitle" data-aos="slide-up" data-aos-offset="120" data-aos-duration="400">Besoin d'assistance ? contactez-nous dès maintenant !</div>
-                  <div class="sb-paragraph" data-aos="slide-up" data-aos-offset="120" data-aos-duration="400">Global Plus Vision est là pour vous aider à atteindre vos objectifs commerciaux. Nos experts se feront un plaisir de vous répondre.</div>
-                  <form class="form js-form" id="contact-form">
-                    <div class="form__group form__group--required">
-                      <!--label class="form__label" for="name">Nom <span class="form__label-required">*</span></label-->
-                      <input required class="form__input" id="name" name="name" placeholder="Jane Smith" type="text">
-                    </div>
-
-                    <div class="form__group form__group--required">
-                      <!--label class="form__label" for="email">Adresse email <span class="form__label-required">*</span></label-->
-                      <input required class="form__input" id="email" name="from_email" placeholder="email@website.com" type="email">
-                    </div>
-
-                    <div class="form__group form__group--required">
-                      <!--label class="form__label" for="phone">Numéro de téléphone <span class="form__label-required">*</span></label-->
-                      <input required class="form__input" id="phone" name="from_phone" placeholder="555-555-5555" type="tel">
-                    </div>
-
-                    <div class="form__group">
-                      <!--label class="form__label" for="message">Message</label-->
-                      <textarea class="form__input" id="message" name="message" placeholder="Votre message" rows="4"></textarea>
-                    </div>
-
-                    <div class="form__group form__group--checkbox form__group--required">
-                      <span style="margin-right:0px;">Vos informations seront stockés afin de répondre à votre demande</span>
-                    </div>
-
-                    <button class="sb-button sb-button--form contact-form__btn" type="submit" style="background-color:#8B0000">Envoyer</button>
-                  </form>
-                </div>
+                <div class="sb-section-title" data-aos="slide-up" data-aos-offset="120" data-aos-duration="400">Nous contacter</div>
+                <div class="sb-section-subtitle" data-aos="slide-up" data-aos-offset="120" data-aos-duration="400">Besoin d'assistance ? contactez-nous dès maintenant !</div>
+                <div class="sb-paragraph" data-aos="slide-up" data-aos-offset="120" data-aos-duration="400">Global Plus Vision est là pour vous aider à atteindre vos objectifs commerciaux. Nos experts se feront un plaisir de vous répondre.</div>
+                
+                <form class="form js-form" id="contact-form">
+                  <div class="form_group form_group--required">
+                    <input required class="form__input" id="name" name="name" placeholder="Jane Smith" type="text">
+                  </div>
+                  <div class="form_group form_group--required">
+                    <input required class="form__input" id="email" name="from_email" placeholder="email@website.com" type="email">
+                  </div>
+                  <div class="form_group form_group--required">
+                    <input required class="form__input" id="phone" name="from_phone" placeholder="555-555-5555" type="tel">
+                  </div>
+                  <div class="form__group">
+                    <textarea class="form__input" id="message" name="message" placeholder="Votre message" rows="4"></textarea>
+                  </div>
+                  <div class="form_group formgroup--checkbox form_group--required">
+                    <span style="margin-right:0px;">Vos informations seront stockés afin de répondre à votre demande</span>
+                  </div>
+                  <button class="sb-button sb-button--form contact-form__btn" type="submit" style="background-color:#8B0000">Envoyer</button>
+                </form>
+                
+                <!-- Message de confirmation -->
+                <div id="confirmation-message" style="display: none; color: green; margin-top: 10px;">Votre message a été envoyé avec succès !</div>
               </div>
             </div>
-          <!--/div-->
+          </div>
 
         </div>
       </div>
     </div>
   </div>
 </section>
-    <!--htmlhint attr-no-duplication:false -->
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    // Récupérer les données du formulaire
+    const formData = {
+      name: document.getElementById('name').value,
+      from_email: document.getElementById('email').value,
+      from_phone: document.getElementById('phone').value,
+      message: document.getElementById('message').value
+    };
+
+    try {
+      // Envoi des données via fetch en POST
+      const response = await fetch('URL_DE_VOTRE_SERVEUR', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        // Afficher le message de confirmation si l'envoi est réussi
+        document.getElementById('confirmation-message').style.display = 'block';
+        // Réinitialiser le formulaire
+        document.getElementById('contact-form').reset();
+      } else {
+        alert("Une erreur est survenue lors de l'envoi du message.");
+      }
+    } catch (error) {
+      alert("Erreur réseau. Veuillez réessayer plus tard.");
+    }
+  });
+</script>
 
 <div style="width: 80%; height: 4px; background-color: #8B0000; margin: 10px auto; margin-top:15px;"></div>
 
