@@ -14,19 +14,9 @@
 <meta name="description" content="Global Plus Vision offre des services de consultation en stratégie d'entreprise pour les entreprises à Cotonou. Contactez-nous pour une vision globale de votre entreprise.">
 <meta property="og:title" content="Global Plus Vision - Votre partenaire en stratégie d'entreprise" />
 <meta property="og:description" content="Global Plus Vision offre des services de consultation en stratégie d'entreprise pour les entreprises à Cotonou. Contactez-nous pour une vision globale de votre entreprise." />
-<!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
-<!-- Google tag (gtag.js)
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HMGBBLYCQJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HMGBBLYCQJ');
-</script>
-<!-- Hotjar Tracking Code for https://chremaghost.github.io/Global-Plus-Vision/ -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <style>
  body {
@@ -47,7 +37,7 @@
 }
 
 .sb-footer__nav-list li a:hover {
-  color: #f0c14b; /* Couleur dorée au survol */
+  color: #f0c14b;
 }
 
 .sb-footer-social-icons .fa {
@@ -121,7 +111,10 @@
 
 #contact .form__input--checkbox {
   display: inline-block;
-  margin-left: 20px;
+  width: 16px;
+  height: 16px;
+  align-items: flex-end;
+  margin-left: 25%;
 }
 
 #contact .contact-form__btn {
@@ -841,7 +834,143 @@ section {
     border-radius: 5px;
     padding: 5px 10px;
 }
-  </style>
+.testimonial-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    position: relative; /* Pour permettre le positionnement absolu du bouton */
+}
+
+.testimonial-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #002c77;
+    margin-bottom: 10px;
+}
+
+.testimonial-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.testimonial-card {
+    background-color: #002c77;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.testimonial-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.testimonial-content h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.testimonial-content p {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Bouton de témoignage */
+.add-testimonial-button {
+    position: absolute;
+    bottom: 5%; /* Distance depuis le bas de la section */
+    right: -35%; /* Distance depuis le bord droit */
+    background-color: #ffc107;
+    color: #002c60;
+    font-size: 20px;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.add-testimonial-button i {
+    font-size: 24px;
+}
+
+.add-testimonial-button:hover {
+    transform: scale(1.1);
+    background-color: #e0a800;
+}
+.form__group--checkbox {
+  margin-top: 20px;
+}
+
+.form__input-checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Style pour la case à cocher */
+.form__input--checkbox {
+  margin-right: 10px;
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid #8B0000;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.form__input--checkbox:checked {
+  background-color: #8B0000;
+  border-color: #8B0000;
+}
+
+.form__input--checkbox:checked::after {
+  content: '✔';
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 20px;
+}
+
+/* Style pour le texte associé à la checkbox */
+.form__label--font-normal {
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.form__label--font-normal:hover {
+  color: #8B0000;
+}
+
+/* Message d'erreur */
+.form__checkbox-error {
+  font-size: 14px;
+  color: red;
+  margin-top: 10px;
+  display: none; /* Masqué par défaut */
+}
+
+.form__checkbox-error.active {
+  display: block; /* Affiché lorsque le message d'erreur est actif */
+}
+   </style>
 
 
 <script data-pagespeed-no-defer>
@@ -869,18 +998,6 @@ section {
     }
   }
 </script>
-<!--  Code de suivi Hotjar pour https://chremaghost.github.io/Global-Plus-Vision/ -->
-<script>
-(function(h,o,t,j,a,r){
-    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:5217141,hjsv:6};
-    a=o.getElementsByTagName('head')[0];
-    r=o.createElement('script');r.async=1;
-    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-    a.appendChild(r);
-})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
-
 </head>
 
 <body style="background-color: #001f3f;">
@@ -1726,7 +1843,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <div class="row sb-row sb-row-opt-center">
       <div class="sb-column col-12 sb-component-section-title">
         <div class="sb-column-content" style="text-align: center;">
-          <div class="sb-section-title sb-section-alignable" data-aos="slide-up" data-aos-offset="120" data-aos-delay="0" data-aos-duration="400" style="font-size: 36px; color: white; font-weight: bold;">
+          <div class="sb-section-title sb-section-alignable" data-aos="slide-up" data-aos-offset="100" data-aos-delay="0" data-aos-duration="400" style="font-size: 36px; color: white; font-weight: bold;">
             Solutions
           </div>
           <div style="width: 100px; height: 4px; background-color: #8B0000; margin: 10px auto;"></div>
@@ -1738,7 +1855,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <div class="row sb-row sb-row-opt-center">
       <div class="sb-column col-12 sb-component-section-subtitle">
         <div class="sb-column-content" style="text-align: center;">
-          <div class="sb-section-subtitle sb-section-alignable" data-aos="slide-up" data-aos-offset="120" data-aos-delay="50" data-aos-duration="400" style="font-size: 20px; color: white;">
+          <div class="sb-section-subtitle sb-section-alignable" data-aos="slide-up" data-aos-offset="100" data-aos-delay="50" data-aos-duration="400" style="font-size: 20px; color: white;">
             Stratégies personnalisées pour votre entreprise
           </div>
         </div>
@@ -1838,41 +1955,98 @@ document.addEventListener("DOMContentLoaded", function() {
 <div style="width: 35%; height: 4px; background-color: #FFF; margin: 10px auto; margin-top:20px;"></div>
 <div style="width: 80%; height: 6px; background-color: #8B0000; margin: 10px auto; margin-top:20px;"></div>
 
+<section>
+    <div class="testimonial-section">
+        <div class="testimonial-header">
+            Ils nous ont fait confiance, pourquoi pas vous ?
+        </div>
+        <div class="testimonial-description">
+            Découvrez les expériences de nos étudiants satisfaits. Leur succès est notre plus grande fierté et la preuve de notre engagement à vos côtés.
+        </div>
+        <div class="testimonial-card">
+            <img src="avatar-placeholder.png" alt="Photo de Kiessi Elyza Nsemi">
+            <div class="testimonial-content">
+                <h3>Kiessi Elyza Nsemi</h3>
+                <p>
+                    J'ai été très impressionné par le niveau de service que j'ai reçu de cette agence. Non seulement ils m'ont aidé à trouver un logement abordable et confortable, mais ils m'ont aussi aidé à obtenir une garantie financière pour mon séjour en France. Je recommande vivement leurs services à tous les étudiants internationaux !
+                </p>
+            </div>
+        </div>
+        <button class="add-testimonial-button">
+            <i class="fas fa-comment-alt"></i>
+        </button>
+    </div>
+</section>
+
+<div style="width: 75%; height: 6px; background-color: #8B0000; margin: 10px auto; margin-top:15px;"></div>
+<div style="width: 35%; height: 4px; background-color: #FFF; margin: 10px auto; margin-top:20px;"></div>
+<div style="width: 80%; height: 6px; background-color: #8B0000; margin: 10px auto; margin-top:20px;"></div>
+
 <!--htmlhint attr-no-duplication:false -->
 <section id="contact" class="sb-section sb-section-opt-light option-section-background-image-fixed option-align-left appointment-inline-view half-width-contact-form" style="min-height: auto;">
   <div class="container sb-container-fixed sb-container">
     <div class="row sb-row sb-row-opt-padding-top-large sb-row-opt-padding-bottom-large sb-row-opt-center">
       <div class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 sb-component-contact-full">
         <div class="sb-column-content">
-          
           <div class="contact-full">
             <div class="row">
-              
-              <!-- Formulaire de contact -->
               <div class="col-xs-12 col-sm-12 col-md-5">
-                <div class="sb-section-title" data-aos="slide-up" data-aos-offset="120" data-aos-duration="400">Nous contacter</div>
-                <div class="sb-section-subtitle" data-aos="slide-up" data-aos-offset="120" data-aos-duration="400">Besoin d'assistance ? contactez-nous dès maintenant !</div>
-                <div class="sb-paragraph" data-aos="slide-up" data-aos-offset="120" data-aos-duration="400">Global Plus Vision est là pour vous aider à atteindre vos objectifs commerciaux. Nos experts se feront un plaisir de vous répondre.</div>
-                
+                <div class="sb-section-title" data-aos="slide-up" data-aos-offset="100" data-aos-duration="400">Nous contacter</div>
+                <div class="sb-section-subtitle" data-aos="slide-up" data-aos-offset="100" data-aos-duration="400">Besoin d'assistance ? contactez-nous dès maintenant !</div>
+                <div class="sb-paragraph" data-aos="slide-up" data-aos-offset="100" data-aos-duration="400">Global Plus Vision est là pour vous aider à atteindre vos objectifs commerciaux. Nos experts se feront un plaisir de vous répondre.</div>
                 <form class="form js-form" id="contact-form">
-                  <div class="form_group form_group--required">
+                  <div class="form_group form_group--required" style="margin-bottom: 2%;">
                     <input required class="form__input" id="name" name="name" placeholder="Jane Smith" type="text">
                   </div>
-                  <div class="form_group form_group--required">
+                  <div class="form_group form_group--required" style="margin-bottom: 2%;">
                     <input required class="form__input" id="email" name="from_email" placeholder="email@website.com" type="email">
                   </div>
-                  <div class="form_group form_group--required">
+                  <div class="form_group form_group--required" style="margin-bottom: 2%;">
                     <input required class="form__input" id="phone" name="from_phone" placeholder="555-555-5555" type="tel">
                   </div>
-                  <div class="form__group">
+                  <div class="form__group" style="margin-bottom: 2%;">
                     <textarea class="form__input" id="message" name="message" placeholder="Votre message" rows="4"></textarea>
                   </div>
-                  <div class="form_group formgroup--checkbox form_group--required">
-                    <span style="margin-right:0px;">Vos informations seront stockés afin de répondre à votre demande</span>
+                  <div class="form__group form__group--checkbox">
+                    <label class="form__label contact-form__label" for="services" style="color: #ccc; font-size: 120%;">Which service or services are you interested in?</label>
+                    <div class="form__checkbox-error" id="checkbox-error-message">
+                      Please select at least one option.
+                    </div>
+                    <div class="form__input-checkbox-wrapper">
+                      <input class="form__input form__input--checkbox" id="service-increase-profits" name="services" type="checkbox" value="Increase profits">
+                      <label class="form__label contact-form__label form__label--font-normal" for="service-increase-profits" style="color: #8B0000; font-size: 100%;">Increase profits</label>
+                    </div>
+
+                    <div class="form__input-checkbox-wrapper">
+                      <input class="form__input form__input--checkbox" id="service-expand-products" name="services" type="checkbox" value="Expand products or services">
+                      <label class="form__label contact-form__label form__label--font-normal" for="service-expand-products" style="color: #8B0000; font-size: 100%;">Expand products or services</label>
+                    </div>
+
+                    <div class="form__input-checkbox-wrapper">
+                      <input class="form__input form__input--checkbox" id="service-develop-plan" name="services" type="checkbox" value="Develop a strategic plan">
+                      <label class="form__label contact-form__label form__label--font-normal" for="service-develop-plan" style="color: #8B0000; font-size: 100%;">Develop a strategic plan</label>
+                    </div>
+
+                    <div class="form__input-checkbox-wrapper">
+                      <input class="form__input form__input--checkbox" id="service-find-efficiencies" name="services" type="checkbox" value="Find more efficiencies">
+                      <label class="form__label contact-form__label form__label--font-normal" for="service-find-efficiencies" style="color: #8B0000; font-size: 100%;">Find more efficiencies</label>
+                    </div>
+
+                    <div class="form__input-checkbox-wrapper">
+                      <input class="form__input form__input--checkbox" id="service-cut-costs" name="services" type="checkbox" value="Cut costs">
+                      <label class="form__label contact-form__label form__label--font-normal" for="service-cut-costs" style="color: #8B0000; font-size: 100%;">Cut costs</label>
+                    </div>
+
+                    <div class="form__input-checkbox-wrapper">
+                      <input class="form__input form__input--checkbox" id="service-diversify-business" name="services" type="checkbox" value="Diversify your business">
+                      <label class="form__label contact-form__label form__label--font-normal" for="service-diversify-business" style="color: #8B0000; font-size: 100%;">Diversify your business</label>
+                    </div>
                   </div>
-                  <button class="sb-button sb-button--form contact-form__btn" type="submit" style="background-color:#8B0000">Envoyer</button>
+                  <div class="form_group formgroup--checkbox form_group--required">
+                    <span style="margin-right:0px;">Vos informations seront stockées afin de répondre à votre demande</span>
+                  </div>
+                  <button class="sb-button sb-button--form contact-form__btn" type="submit" style="background-color:#8B0000; margin-top: 2%;">Envoyer</button>
                 </form>
-                
                 <!-- Message de confirmation -->
                 <div id="confirmation-message" style="display: none; color: green; margin-top: 10px;">Votre message a été envoyé avec succès !</div>
               </div>
@@ -1892,14 +2066,26 @@ document.addEventListener("DOMContentLoaded", function() {
     // Récupérer les données du formulaire
     const formData = {
       name: document.getElementById('name').value,
-      from_email: document.getElementById('email').value,
-      from_phone: document.getElementById('phone').value,
-      message: document.getElementById('message').value
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
+      message: document.getElementById('message').value,
+      services: [] // Tableau pour stocker les services cochés
     };
 
+    // Parcourir toutes les cases à cocher et ajouter les services cochés
+    document.querySelectorAll('input[name="services"]:checked').forEach(function(checkbox) {
+      formData.services.push(checkbox.value);
+    });
+
+    if (formData.services.length === 0) {
+      alert('Veuillez sélectionner au moins un service.');
+      return;
+    }
+
+    console.log('Services sélectionnés:', formData.services);
+
     try {
-      // Envoi des données via fetch en POST
-      const response = await fetch('URL_DE_VOTRE_SERVEUR', {
+      const response = await fetch('http://localhost:3000/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -1908,9 +2094,7 @@ document.addEventListener("DOMContentLoaded", function() {
       });
 
       if (response.ok) {
-        // Afficher le message de confirmation si l'envoi est réussi
         document.getElementById('confirmation-message').style.display = 'block';
-        // Réinitialiser le formulaire
         document.getElementById('contact-form').reset();
       } else {
         alert("Une erreur est survenue lors de l'envoi du message.");
