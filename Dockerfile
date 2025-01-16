@@ -1,22 +1,20 @@
-# Utilisez une image Node.js officielle
-FROM node:18
+# Utiliser une image de base Node.js
+FROM node:16
 
-# Créez et positionnez-vous dans le répertoire de l'application
-WORKDIR ./
+# Définir le répertoire de travail
+WORKDIR /usr/src/app
 
-# Copiez les fichiers package.json et package-lock.json
-COPY package*.json ./
+# Copier les fichiers nécessaires dans le conteneur
+COPY package.json package-lock.json /usr/src/app/
 
-# Installez les dépendances
-RUN npm install mysql2
-RUN npm install express body-parser nodemailer node
-RUN npm install cors
+# Nettoyer le cache npm et installer les dépendances
+RUN npm cache clean --force && npm install mysql2 && npm install express body-parser nodemailer node && npm install cors
 
-# Copiez le reste du code dans le conteneur
-COPY . .
+# Copier le reste des fichiers dans le conteneur
+COPY . /usr/src/app/
 
-# Exposez le port sur lequel votre application tourne
+# Exposer le port (remplacez 3000 par votre port si nécessaire)
 EXPOSE 3000
 
-# Définissez la commande par défaut pour démarrer l'application
+# Commande pour démarrer le serveur
 CMD ["node", "sever.js"]
