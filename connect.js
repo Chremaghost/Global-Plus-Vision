@@ -1,11 +1,11 @@
 const mysql = require("mysql2");
 
 const dbConfig = {
-  host: "localhost", // Utilisez localhost au lieu de l'adresse IP
-  user: "my_user",
-  password: "my_password",
-  database: "my_database",
-  port: 3307, // Port mappé par Docker
+  host: process.env.DB_HOST || "localhost",
+  user: process.env.DB_USER || "my_user",
+  password: process.env.DB_PASSWORD || "my_password",
+  database: process.env.DB_NAME || "my_database",
+  port: process.env.DB_PORT || 3306,
 };
 
 const db = mysql.createConnection(dbConfig);
